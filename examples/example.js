@@ -9,6 +9,15 @@ var displayInstaBlocks = function(response, params) {
   console.log(response);
   console.log(params);  // We can pass in any parameter into the callback, here we will pass in the ID of the container
   var data = response.data;
+  
+
+        // SORT PICTURES by RANDOM
+        data.sort(function() { return 0.5 - Math.random() });
+        // LIMIT NUMBER OF PHOTOS SHOWN
+        data = data.splice(10,10000);
+
+  
+  
   var container = document.createElement('div');
   var blockList = document.createElement('ul');
   for(var i = 0; i < response.data.length; i++) {
